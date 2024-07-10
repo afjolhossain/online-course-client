@@ -12,7 +12,7 @@ const AddCources = () => {
     const image = form.image.value;
     const courseData = { title, fees, details, instractor, image };
 
-    await fetch("http://localhost:5000/courses", {
+    await fetch("https://online-course-server-pdwu.onrender.com/courses", {
       method: "POST",
       headers: {
         "content-type": "application/json",

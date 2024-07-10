@@ -7,7 +7,7 @@ const DashBoard = () => {
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://online-course-server-pdwu.onrender.com/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserInfo(data));
   }, [user]);
@@ -32,13 +32,16 @@ const DashBoard = () => {
       about,
     };
 
-    fetch(`http://localhost:5000/user/${userInfo?.email}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedData),
-    })
+    fetch(
+      `https://online-course-server-pdwu.onrender.com/user/${userInfo?.email}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         Swal.fire({

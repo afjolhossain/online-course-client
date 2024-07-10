@@ -25,7 +25,8 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () =>
+          fetch("https://online-course-server-pdwu.onrender.com/courses"),
       },
       {
         path: "about",
@@ -43,7 +44,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(
+            `https://online-course-server-pdwu.onrender.com/courses/${params.id}`
+          ),
       },
 
       {
@@ -77,13 +80,16 @@ export const router = createBrowserRouter([
       {
         path: "allcourse",
         element: <AllCourses />,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () =>
+          fetch("https://online-course-server-pdwu.onrender.com/courses"),
       },
       {
         path: "allcourse/edit/:id",
         element: <EditCourse />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/courses/${params.id}`),
+          fetch(
+            `https://online-course-server-pdwu.onrender.com/courses/${params.id}`
+          ),
       },
     ],
   },

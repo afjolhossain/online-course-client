@@ -17,13 +17,16 @@ const EditCourse = () => {
     const courseData = { title, fees, details, instractor, image };
     console.log(courseData);
 
-    await fetch(`http://localhost:5000/courses/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(courseData),
-    })
+    await fetch(
+      `https://online-course-server-pdwu.onrender.com/courses/${_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(courseData),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         Swal.fire({

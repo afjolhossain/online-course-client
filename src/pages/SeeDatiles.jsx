@@ -28,7 +28,7 @@ const SeeDatiles = () => {
     };
     console.log(orderConfirmData);
 
-    await fetch("http://localhost:5000/orders", {
+    await fetch("https://online-course-server-pdwu.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

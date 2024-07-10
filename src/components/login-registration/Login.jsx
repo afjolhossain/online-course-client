@@ -25,11 +25,13 @@ const Login = () => {
         console.log(logInUser);
 
         const user = { email };
-        axios.post("http://localhost:5000/jwt", user).then((res) => {
-          if (res.data.success) {
-            navigate(location.state?.from?.pathname || "/");
-          }
-        });
+        axios
+          .post("https://online-course-server-pdwu.onrender.com/jwt", user)
+          .then((res) => {
+            if (res.data.success) {
+              navigate(location.state?.from?.pathname || "/");
+            }
+          });
       })
       .catch((error) => {
         setSignUPError(error.message);
