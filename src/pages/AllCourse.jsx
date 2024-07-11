@@ -5,15 +5,12 @@ const AllCourse = ({ course, onDelete }) => {
   const { title, image, fees, instractor, _id } = course;
 
   const handleDelete = async () => {
-    await fetch(
-      `https://online-course-server-pdwu.onrender.com/courses/${_id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json",
-        },
-      }
-    )
+    await fetch(`https://online-course-server-beta.vercel.app/courses/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then(() => {
         onDelete(_id);

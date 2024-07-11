@@ -7,7 +7,7 @@ const DashBoard = () => {
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
-    fetch(`https://online-course-server-pdwu.onrender.com/user/${user?.email}`)
+    fetch(`https://online-course-server-beta.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserInfo(data));
   }, [user]);
@@ -33,7 +33,7 @@ const DashBoard = () => {
     };
 
     fetch(
-      `https://online-course-server-pdwu.onrender.com/user/${userInfo?.email}`,
+      `https://online-course-server-beta.vercel.app/user/${userInfo?.email}`,
       {
         method: "PATCH",
         headers: {

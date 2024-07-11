@@ -7,7 +7,7 @@ import axios from "axios";
 const BookingUser = () => {
   const { user } = useContext(authContext);
   const [bookings, setBooking] = useState([]);
-  const url = `https://online-course-server-pdwu.onrender.com/orders/?.email=${user?.email}`;
+  const url = `https://online-course-server-beta.vercel.app/orders/?.email=${user?.email}`;
 
   useEffect(() => {
     axios.get(url, { withCredentials: true }).then((res) => {
@@ -16,7 +16,7 @@ const BookingUser = () => {
   }, [url]);
 
   const handleDelete = (id) => {
-    fetch(`https://online-course-server-pdwu.onrender.com/orders/${id}`, {
+    fetch(`https://online-course-server-beta.vercel.app/orders/${id}`, {
       method: "DELETE",
     }).then((res) => res.json());
     Swal.fire({

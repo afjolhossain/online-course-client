@@ -26,7 +26,7 @@ const Login = () => {
 
         const user = { email };
         axios
-          .post("https://online-course-server-pdwu.onrender.com/jwt", user)
+          .post("https://online-course-server-beta.vercel.app/jwt", user)
           .then((res) => {
             if (res.data.success) {
               navigate(location.state?.from?.pathname || "/");

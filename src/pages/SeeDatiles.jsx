@@ -28,7 +28,7 @@ const SeeDatiles = () => {
     };
     console.log(orderConfirmData);
 
-    await fetch("https://online-course-server-pdwu.onrender.com/orders", {
+    await fetch("https://online-course-server-beta.vercel.app/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
