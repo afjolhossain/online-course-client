@@ -10,7 +10,7 @@ const BookingUser = () => {
   const url = `https://online-course-server-beta.vercel.app/orders/?.email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url, { withCredentials: true }).then((res) => {
+    axios.get(url).then((res) => {
       setBooking(res.data);
     });
   }, [url]);
