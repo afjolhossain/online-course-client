@@ -17,7 +17,7 @@ const EditCourse = () => {
     const courseData = { title, fees, details, instractor, image };
     console.log(courseData);
 
-    await fetch(`https://online-course-server-beta.vercel.app/courses/${_id}`, {
+    await fetch(`https://y-phi-beryl.vercel.app/courses/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

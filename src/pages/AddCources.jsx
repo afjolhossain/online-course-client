@@ -12,7 +12,7 @@ const AddCources = () => {
     const image = form.image.value;
     const courseData = { title, fees, details, instractor, image };
 
-    await fetch("https://online-course-server-beta.vercel.app/courses", {
+    await fetch("https://y-phi-beryl.vercel.app/courses", {
       method: "POST",
       headers: {
         "content-type": "application/json",

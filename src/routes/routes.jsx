@@ -25,8 +25,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () =>
-          fetch("https://online-course-server-beta.vercel.app/courses"),
+        loader: () => fetch("https://y-phi-beryl.vercel.app/courses"),
       },
       {
         path: "about",
@@ -44,9 +43,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://online-course-server-beta.vercel.app/courses/${params.id}`
-          ),
+          fetch(`https://y-phi-beryl.vercel.app/courses/${params.id}`),
       },
 
       {
@@ -80,16 +77,13 @@ export const router = createBrowserRouter([
       {
         path: "allcourse",
         element: <AllCourses />,
-        loader: () =>
-          fetch("https://online-course-server-beta.vercel.app/courses"),
+        loader: () => fetch("https://y-phi-beryl.vercel.app/courses"),
       },
       {
         path: "allcourse/edit/:id",
         element: <EditCourse />,
         loader: ({ params }) =>
-          fetch(
-            `https://online-course-server-beta.vercel.app/courses/${params.id}`
-          ),
+          fetch(`https://y-phi-beryl.vercel.app/courses/${params.id}`),
       },
     ],
   },

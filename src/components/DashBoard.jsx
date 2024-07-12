@@ -7,7 +7,7 @@ const DashBoard = () => {
   const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
-    fetch(`https://online-course-server-beta.vercel.app/user/${user?.email}`)
+    fetch(`https://y-phi-beryl.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserInfo(data));
   }, [user]);
@@ -32,16 +32,13 @@ const DashBoard = () => {
       about,
     };
 
-    fetch(
-      `https://online-course-server-beta.vercel.app/user/${userInfo?.email}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedData),
-      }
-    )
+    fetch(`https://y-phi-beryl.vercel.app/user/${userInfo?.email}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedData),
+    })
       .then((res) => res.json())
       .then(() => {
         Swal.fire({

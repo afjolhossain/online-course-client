@@ -4,7 +4,6 @@ import registerPic from "../../../public/images/register.jpg";
 import registerill from "../../../public/images/Mobile login-amico (1).png";
 import { useContext, useState } from "react";
 import { authContext } from "../../Provider/AuthProvider";
-import axios from "axios";
 
 const Login = () => {
   const { user, userLogin, loading } = useContext(authContext);
@@ -23,15 +22,7 @@ const Login = () => {
       .then((result) => {
         const logInUser = result.user;
         console.log(logInUser);
-
-        const user = { email };
-        axios
-          .post("https://online-course-server-beta.vercel.app/jwt", user)
-          .then((res) => {
-            if (res.data.success) {
-              navigate(location.state?.from?.pathname || "/");
-            }
-          });
+        navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => {
         setSignUPError(error.message);
